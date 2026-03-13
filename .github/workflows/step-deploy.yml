@@ -22,7 +22,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: uv-artifact
-          path: artifacts/
+          path: appUsers/
       - name: Azure Login
         uses: azure/login@v2
         with:
@@ -33,4 +33,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: app-api-net-uv-${{inputs.env}}
-          package: artifacts/
+          package: appUsers/
