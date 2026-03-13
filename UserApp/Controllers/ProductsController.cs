@@ -17,8 +17,7 @@ public class ProductsController : ControllerBase
         new Product { Id = 6, Name = "Webcam", Price = 60 },
         new Product { Id = 7, Name = "External Hard Drive", Price = 150 },
         new Product { Id = 8, Name = "USB-C Hub", Price = 40 },
-        new Product { Id = 9, Name = "Gaming Chair", Price = 250 },
-        new Product { Id = 10, Name = "Microphone", Price = 110 }
+        new Product { Id = 9, Name = "Gaming Chair", Price = 250 }
     };
 
 
