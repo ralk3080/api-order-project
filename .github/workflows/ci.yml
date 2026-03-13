@@ -23,12 +23,12 @@ jobs:
         - name: Test
           run: dotnet test --configuration ${{env.BUILD_CONFIGURATION}}
         - name: Dotnet Publish
-          run: dotnet publish src/TaskApi/TaskApi.csproj --configuration ${{env.BUILD_CONFIGURATION}} -o artifacts
+          run: dotnet publish src/TaskApi/TaskApi.csproj --configuration ${{env.BUILD_CONFIGURATION}} -o appUsers
         - name: Upload artifact
           uses: actions/upload-artifact@v4
           with:
             name: uv-artifact
-            path: artifacts/
+            path: appUsers/
     deploy_dev:
       name: Deploy Dev      
       needs: build
@@ -36,10 +36,10 @@ jobs:
       with:
         env: dev
       secrets: inherit
-    deploy_prod:
-      name: Deploy Prod
-      needs: deploy_dev
-      uses: ./.github/workflows/step-deploy.yml
-      with:
-        env: prod
-      secrets: inherit
+    # deploy_prod:
+    #   name: Deploy Prod
+    #   needs: deploy_dev
+    #   uses: ./.github/workflows/step-deploy.yml
+    #   with:
+    #     env: prod
+    #   secrets: inherit
